@@ -11,4 +11,11 @@ def create_app():
     ma.init_app(app)
     bcrypt.init_app(app)
     jwt.init_app(app)
+
+    app.register_blueprint(db_commands)
+    app.register_blueprint(auth_bp)
+    app.register_blueprint(product_bp)
+
+
+
     return app
